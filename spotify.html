@@ -36,14 +36,14 @@
       var ua = navigator.userAgent || navigator.vendor || window.opera;
 
       if (/android/i.test(ua)) {
-        window.location = "intent://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P#Intent;package=com.spotify.music;scheme=https;end";
+        window.location = "intent://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB#Intent;package=com.spotify.music;scheme=https;end";
       } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-        window.location = "spotify://track/7ouMYWpwJ422jRcDASZB7P";
+        window.location = "spotify://track/2cMHcs3c5OQ2QGX9X9MfXB";
         setTimeout(function () {
-          window.location = "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P";
+          window.location = "https://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB";
         }, 1500);
       } else {
-        window.location = "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P";
+        window.location = "https://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB";
       }
     }
   </script>
@@ -51,6 +51,6 @@
 <body>
   <h1>Nghe ngay trên Spotify</h1>
   <button onclick="openSpotify()">🎵 Mở bằng Spotify</button>
-  <p>Nếu không hoạt động, hãy <a href="https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P">nhấn vào đây</a>.</p>
+  <p>Nếu không hoạt động, hãy <a href="https://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB">nhấn vào đây</a>.</p>
 </body>
 </html>
