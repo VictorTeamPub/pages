@@ -1,35 +1,56 @@
-<!-- open-spotify.html -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mở Spotify</title>
+  <meta charset="UTF-8">
+  <title>Mở bằng Spotify</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #191414;
+      color: white;
+    }
+    button {
+      background-color: #1DB954;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #17a34a;
+    }
+    p {
+      margin-top: 30px;
+      color: #bbb;
+    }
+    a {
+      color: #1DB954;
+    }
+  </style>
   <script>
     function openSpotify() {
-      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
 
-      // Android
-      if (/android/i.test(userAgent)) {
-        window.location = "intent://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB#Intent;package=com.spotify.music;scheme=https;end";
-      }
-
-      // iOS
-      else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        window.location = "spotify://track/2cMHcs3c5OQ2QGX9X9MfXB";
+      if (/android/i.test(ua)) {
+        window.location = "intent://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P#Intent;package=com.spotify.music;scheme=https;end";
+      } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        window.location = "spotify://track/7ouMYWpwJ422jRcDASZB7P";
         setTimeout(function () {
-          window.location = "https://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB";
-        }, 1000);
-      }
-
-      // Desktop
-      else {
-        window.location = "https://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB";
+          window.location = "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P";
+        }, 1500);
+      } else {
+        window.location = "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P";
       }
     }
-
-    window.onload = openSpotify;
   </script>
 </head>
 <body>
-  <p>Nếu không tự động mở, hãy <a href="https://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB">nhấn vào đây</a>.</p>
+  <h1>Nghe ngay trên Spotify</h1>
+  <button onclick="openSpotify()">🎵 Mở bằng Spotify</button>
+  <p>Nếu không hoạt động, hãy <a href="https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P">nhấn vào đây</a>.</p>
 </body>
 </html>
