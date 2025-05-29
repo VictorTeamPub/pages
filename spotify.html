@@ -1,0 +1,35 @@
+<!-- open-spotify.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mở Spotify</title>
+  <script>
+    function openSpotify() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Android
+      if (/android/i.test(userAgent)) {
+        window.location = "intent://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB#Intent;package=com.spotify.music;scheme=https;end";
+      }
+
+      // iOS
+      else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location = "spotify://track/2cMHcs3c5OQ2QGX9X9MfXB";
+        setTimeout(function () {
+          window.location = "https://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB";
+        }, 1000);
+      }
+
+      // Desktop
+      else {
+        window.location = "https://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB";
+      }
+    }
+
+    window.onload = openSpotify;
+  </script>
+</head>
+<body>
+  <p>Nếu không tự động mở, hãy <a href="https://open.spotify.com/track/2cMHcs3c5OQ2QGX9X9MfXB">nhấn vào đây</a>.</p>
+</body>
+</html>
